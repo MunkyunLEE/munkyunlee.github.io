@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Munkyun Lee CV</title>
+<style>
+  /* ===== 기본 설정 (색/폰트/크기는 여기서만 바꾸면 전체 반영) ===== */
+  :root{
+    --font-main: "Times New Roman", Times, "YuMincho", "Hiragino Mincho ProN", "MS Mincho", serif;
+    --fs-body: 11pt;            /* 본문 크기 */
+    --fs-small: 10pt;           /* 표/리스트 크기 */
+    --fs-h2: 14pt;              /* 섹션 제목 크기 */
+    --link: #0563C1;            /* 링크 색 (Word 기본 파랑) */
+    --line: #000;               /* 표/밑줄 색 */
+    --paper: #fff;
+    --bg: #e9e9e9;              /* 화면 보기 시 바깥 배경 */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font-family:var(--font-main);font-size:var(--fs-body);color:#000;line-height:1.25}
+  .sheet{width:210mm;max-width:100%;margin:16px auto;background:var(--paper);padding:22mm 20mm 20mm;box-shadow:0 1px 6px rgba(0,0,0,.2)}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  p{margin:0 0 .45em;text-align:justify}
+
+  /* ===== 헤더 ===== */
+  header{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+  header img{width:40mm;height:auto;flex:none}
+  header .info{flex:1}
+  header h1{font-size:17pt;text-align:center;margin:2px 0 8px}
+  header .deg{text-align:center;font-size:var(--fs-small);margin-bottom:28px}
+  header .contact{font-size:var(--fs-small);line-height:1.9}
+
+  /* ===== 섹션 ===== */
+  h2{font-size:var(--fs-h2);margin:22px 0 4px;border-bottom:1px solid var(--line);padding-bottom:1px}
+  h2 small{font-size:11pt;font-weight:normal}
+  ul.dash{list-style:none;margin:6px 0;padding:0;font-size:var(--fs-small)}
+  ul.dash>li{position:relative;padding-left:24px;margin:0 0 6px}
+  ul.dash>li::before{content:"−";position:absolute;left:4px}
+  ul.dash.tight>li{margin-bottom:3px}
+
+  /* ===== 3열 표 (기간 | 내용 | 장소) ===== */
+  table.cv{width:100%;border-collapse:collapse;font-size:var(--fs-small);margin-top:12px}
+  table.cv td{border:1px solid var(--line);padding:3px 5px;vertical-align:middle}
+  table.cv td.date{width:12.5%;text-align:center;white-space:nowrap}
+  table.cv td.place{width:11.5%;text-align:center}
+  table.cv td.body{text-align:justify}
+  table.cv .gap{height:.9em}
+  table.cv ul.dash{margin:0}
+  table.cv ul.dash>li{margin:0}
+
+  /* ===== 참고문헌 리스트 ([1], [2] ...) ===== */
+  ol.ref{list-style:none;margin:6px 0;padding:0;font-size:var(--fs-small)}
+  ol.ref>li{display:grid;grid-template-columns:26px 1fr;margin-bottom:8px}
+  ol.ref>li::before{content:"[" attr(data-n) "]"}
+  .me{font-weight:bold}
+
+  /* ===== 스킬 2열 ===== */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:var(--fs-small)}
+  .cols h3{font-size:var(--fs-small);margin:8px 0 2px 4px}
+
+  /* ===== 인쇄 / PDF 저장 (Cmd+P) ===== */
+  @page{size:A4;margin:18mm 20mm}
+  @media print{
+    body{background:#fff}
+    .sheet{margin:0;padding:0;box-shadow:none;width:auto}
+    .pb{break-before:page}         /* 원본 PDF의 페이지 넘김 위치 */
+    table.cv tr, ol.ref>li, ul.dash>li{break-inside:avoid}
+    a{color:var(--link)}
+  }
+  @media (max-width:640px){
+    .sheet{padding:16px}
+    header{flex-direction:column;align-items:center}
+    .cols{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<!-- ================= HEADER ================= -->
+<header>
+  <img src="images/profile.jpg" alt="Munkyun Lee">
+  <div class="info">
+    <h1>Munkyun Lee, Ph.D.</h1>
+    <div class="deg">Staff Engineer II at Samsung Electronics<br>(Infra AX/PI Team, Global Manufacturing & Infra Technology, DS Division)<br>Doctor of Engineering (Architecture, The University of Tokyo)</div>
+    <div class="contact">
+      Phone: +82-10-8193-5268<br>
+      E-mail: <a href="mailto:research.mklee95@gmail.com" style="color:inherit">research.mklee95@gmail.com</a><br>
+      Linked in: <a href="www.linkedin.com/in/munkyun-lee-ph-d-0a92a524a">https://www.linkedin.com/in/munkyun-lee-ph-d-0a92a524a/</a><br>
+      Research Gate: <a href="https://www.researchgate.net/profile/Munkyun-Lee">https://www.researchgate.net/profile/Munkyun-Lee</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= INTRODUCE ================= -->
+<h2>Introduce</h2>
+<p><b>Munkyun Lee</b> majored in architectural structure design and analysis. His specialization is computational structural design, computational kinematics, and digital fabrication. His research revolves around realizing transformable and deployable structures that use origami principles to construct spatial structures and infrastructure rapidly.</p>
+<p>Collaborating with experts across diverse realms, he seeks to scale up origami structures and develop software to automate design, analysis, and fabrication methods. If successful, origami structures serve as vital temporary emergency housing solutions, offering swift relief to communities following catastrophes like pandemics, earthquakes, floods, and more. Furthermore, he aims to integrate origami-based structures with modular systems, enhancing construction speed and simplicity. This innovative approach holds promise for significantly streamlining building workflow, potentially evolving into adaptable, transformable habitats.</p>
+<p>Beyond his primary focus, Munkyun is broadening his research scope to encompass various fields. He has developed an interest in mechanical meta-materials to enhance structural and dynamic properties. Moreover, he has recently been exploring the possibilities of flexible and stretchable electronic devices, including displays, based on the Kiri-origami mechanism and compliant mechanism, and robotics applications for automatic deploying and folding motion.</p>
+
+<!-- ================= RESEARCH INTERESTS ================= -->
+<h2>Research Interests</h2>
+<ul class="dash tight">
+  <li>Deployable &amp; Transformable Structure</li>
+  <li>Computational Design &amp; Analysis</li>
+  <li>Origami Engineering</li>
+  <li>Modular System</li>
+  <li>Compliant Mechanism</li>
+  <li>Mechanical Metamaterial</li>
+  <li>Computational Geometry</li>
+  <li>Digital Fabrication</li>
+  <li>Seismic Isolation &amp; Reduction System</li>
+  <li>Structural Analysis &amp; Evaluation Methodology</li>
+</ul>
+
+<!-- ================= EDUCATION ================= -->
+<h2 class="pb">Education</h2>
+<table class="cv">
+  <tr>
+    <td class="date">2023.04<br>~ 2026.03</td>
+    <td class="body"><b>The University of Tokyo</b><br><b>Ph.D.</b> in Architecture, Tachi Lab.<div class="gap"></div>
+      <b>Thesis</b>: Geometry and Mechanics of Multistable Origami Blocks<br>Advisor: Tomohiro Tachi</td>
+    <td class="place">Tokyo,<br>Japan</td>
+  </tr>
+  <tr>
+    <td class="date">2021.04<br>~ 2023.03</td>
+    <td class="body"><b>The University of Tokyo</b><br><b>M.S.</b> in Architecture, Tachi Lab.<div class="gap"></div>
+      <b>Thesis</b>: Design and Evaluation of Compliant Hinges for Deployable Thick Origami Structures<br>Advisor: Tomohiro Tachi</td>
+    <td class="place">Tokyo,<br>Japan</td>
+  </tr>
+  <tr>
+    <td class="date">2015.04<br>~ 2021.03</td>
+    <td class="body"><b>The University of Osaka</b><br><b>B.S.</b> in Global Architecture – Architectural Engineering Course, Miyamoto Lab.<div class="gap"></div>
+      <b>Thesis</b>: Study on the Seismic Response Reduction of Houses with Magnetically Levitated Foundation<br>Advisor: Yuji Miyamoto</td>
+    <td class="place">Osaka,<br>Japan</td>
+  </tr>
+</table>
+
+<!-- ================= WORK ================= -->
+<h2 class="pb">Work Experiences</h2>
+<table class="cv">
+  <tr>
+    <td class="date">2026.04<br>~ Present</td>
+    <td class="body"><b>Samsung Electronics</b><br><b>Staff Engineer II</b>
+      <ul class="dash"><li>Infra AX/PI Team, Global Manufacturing &amp; Infra Technology, DS Division,<br>CAE Simulation - Computational Design & Structural Analysis</li></ul></td>
+    <td class="place">Pyeongtaek,<br>Korea</td>
+  </tr>
+  <tr>
+    <td class="date">2025.07<br>~ 2025.08</td>
+    <td class="body"><b>Samsung Electronics Global Internship</b><br><b>Global Talent (Industry-Academic Scholarship) Program</b>
+      <ul class="dash"><li>A-Infra Technology Team, Global Manufacturing &amp; Infra Technology, DS Division,<br>Digital Twin Preliminary Development Part</li></ul></td>
+    <td class="place">Pyeongtaek,<br>Korea</td>
+  </tr>
+  <tr>
+    <td class="date">2024.03<br>~2026.03</td>
+    <td class="body"><b>JSPS Research Fellowship (DC2)</b><br><b>Research Fellow</b>
+      <ul class="dash">
+        <li>Theme: Design and Analysis of Multistable Origami Structure using Compliant Hinges</li>
+        <li>Funding Agency: JSPS (Japan Society for the Promotion of Science)<br>[Link: <a href="https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-24KJ0648/">https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-24KJ0648/</a>]</li>
+        <li>Special research incentive grant (~2025.04)</li>
+      </ul></td>
+    <td class="place">Tokyo,<br>Japan</td>
+  </tr>
+  <tr>
+    <td class="date" style="vertical-align:top">2022.04<br>~ 2026.03<br><br><br><br><br>2021.04~07<br>2022.10~01<br>2023.10~01</td>
+    <td class="body"><b>The University of Tokyo</b><br><b>Research Assistant</b>
+      <ul class="dash">
+        <li>World-leading Innovative Graduate Study Program Co-Designing Future Society (Wings-CFS)</li>
+        <li>Design Future Society (DFS) Fellow</li>
+      </ul><div class="gap"></div>
+      <b>Teaching Assistant</b>
+      <ul class="dash"><li>Graphic Science B</li><li>Graphic Science A</li><li>Graphic Science A</li></ul></td>
+    <td class="place">Tokyo,<br>Japan</td>
+  </tr>
+  <tr>
+    <td class="date">2016.03<br>~2017.12</td>
+    <td class="body"><b>Military Service</b><br>&nbsp;&nbsp;&nbsp;Korea National Police Agency - Auxiliary police</td>
+    <td class="place">Seoul,<br>Korea</td>
+  </tr>
+</table>
+
+<!-- ================= VISITING =================
+<h2 style="margin-top:36px">Collaborations</h2>
+<table class="cv">
+  <tr>
+    <td class="date">2024.11<br>2022.11</td>
+    <td class="body"><b>Visiting at Princeton University</b><br>
+      - Glaucio Paulino Lab. [<a href="https://paulino.princeton.edu/">https://paulino.princeton.edu/</a>]<br>
+      &nbsp;&nbsp;&nbsp;Visiting for research collaboration of Origami Engineering and Mechanical Metamaterial Part.<div class="gap"></div>
+      - Sigrid Adrianssens Lab. [<a href="http://formfindinglab.princeton.edu/">http://formfindinglab.princeton.edu/</a>]<br>
+      Visiting for research collaboration of Origami-inspired deployable structure for architectural application</td>
+    <td class="place">Princeton,<br>US</td>
+  </tr>
+  <tr>
+    <td class="date">2024.09</td>
+    <td class="body"><b>Visiting at TU Wien</b><br>
+      &nbsp;&nbsp;&nbsp;DGGS - Kiumars Sharifmoghaddam [<a href="https://www.geometrie.tuwien.ac.at/fg3/">https://www.geometrie.tuwien.ac.at/fg3/</a>]<br>
+      &nbsp;&nbsp;&nbsp;Visiting for research collaboration of geometry mathematics and origami engineering for architectural application<br>
+      <b>Achievement: Publications [3, 6]</b></td>
+    <td class="place">Vienna,<br>Austria</td>
+  </tr>
+  <tr>
+    <td class="date">2025.06<br>2024.07<br>2023.07</td>
+    <td class="body"><b>Visiting at The University of Queensland</b><br>
+      &nbsp;&nbsp;&nbsp;Folded Structures Lab. – Joe Gattas [<a href="http://foldedstructureslab.com/">http://foldedstructureslab.com/</a>]<br>
+      &nbsp;&nbsp;&nbsp;Visiting for research collaboration of Origami Engineering and deployable Structure for architectural application<br>
+      <b>Achievement: Publications [1, 4]</b></td>
+    <td class="place">Brisbane,<br>Australia</td>
+  </tr>
+</table> -->
+
+<!-- ================= PUBLICATIONS ================= -->
+<h2>Publications [ SCI Journal &amp; Full Paper Proceedings <small>(Reviewed)</small>]</h2>
+<ol class="ref">
+  <li data-n="1"><div><span class="me">Munkyun Lee</span>, Joseph M. Gattas, Kumiko Hayashi, Yuya Kurusu, Toshiyuki Morishima, Hiroshi Sato, Mizuki Shigematsu, Maiko Takiguchi, Hiroki Tamai, Issei Tanaka and Tomohiro Tachi, “CC-Chair: Reconfigurable multistable curved-crease origami chair block”, <i>Proceedings of International Association for Shell and Spatial Structures (IASS) Annual Symposia, Turin, Italy</i>, 2026.09<br>
+    [<b><u>Link</u></b>: <a href="https://www.researchgate.net/publication/414415481_CC-Chair_Reconfigurable_multistable_curved-crease_origami_chair_block">https://www.researchgate.net/publication/414415481_CC-Chair_Reconfigurable_multistable_curved-crease_origami_chair_block</a>]</div></li>
+  <li data-n="2"><div><span class="me">Munkyun Lee</span>, Joseph M. Gattas, and Tomohiro Tachi, “Multistable Curved-crease Origami Blocks for Reconfigurable Modular Building System”, <i>Proceedings of International Association for Shell and Spatial Structures (IASS) Annual Symposia, Mexico City, Mexico</i>, 2025.10<br>
+    [<b><u>Link</u></b>: <a href="https://www.ingentaconnect.com/contentone/iass/piass/2025/00002025/00000019/art00008">https://www.ingentaconnect.com/contentone/iass/piass/2025/00002025/00000019/art00008</a>]</div></li>
+  <li data-n="3"><div><span class="me">Munkyun Lee</span>, and Tomohiro Tachi, “Design and Evaluation of Compliant Hinges for Deployable Thick Origami Structures”, <i>Journal of the International Association for Shell and Spatial Structures (IASS), No. 65(4), pp.238-247.</i> 2024.12<br>
+    <b><u>DOI</u></b>: <a href="https://doi.org/10.20898/j.iass.2024.015">https://doi.org/10.20898/j.iass.2024.015</a></div></li>
+  <li data-n="4"><div><span class="me">Munkyun Lee</span>, Kiumars Sharifmoghaddam, and Tomohiro Tachi, “Multistable Polyhedral Origami Modules for Curved Surface Assembly”, <i>Proceedings of International Association for Shell and Spatial Structures (IASS) Annual Symposia</i>, 2024.08<br>
+    [<b><u>Link</u></b>: <a href="https://www.ingentaconnect.com/contentone/iass/piass/2024/00002024/00000012/art00036">https://www.ingentaconnect.com/contentone/iass/piass/2024/00002024/00000012/art00036</a>]</div></li>
+  <li data-n="5"><div><span class="me">Munkyun Lee</span>, Mahmoud Abu-Saleem, Tomohiro Tachi, and Joeseph M. Gattas, “A Lightweight Building Construction System using Curved-Crease Origami Blocks”, <i>Proceedings of the 8<sup>th</sup> International Meeting on Origami in Science, Mathematics, and Education (8OSME)</i>, 2024.07<br>
+    <b><u>DOI:</u></b> <a href="https://doi.org/10.1007/978-981-96-8664-3_18">https://doi.org/10.1007/978-981-96-8664-3_18</a></div></li>
+  <li data-n="6"><div><span class="me">Munkyun Lee</span>, Yuki Miyajima, and Tomohiro Tachi, “Designing and Analyzing Multistable Mechanisms using Quadrilateral Boundary Rigid Origami”, ASME. J. Mechanisms and Robotics, 16(1):011008, 2024.01<br>
+    <b><u>DOI:</u></b> <a href="https://doi.org/10.1115/1.4062132">https://doi.org/10.1115/1.4062132</a></div></li>
+  <li data-n="7" class="pb"><div>Felix Dellinger, Martin Kilian, <span class="me">Munkyun Lee</span>, Christian Muller, Georg Nawratil, Tomohiro Tachi, and Kiumars Sharifmoghaddam, “Snapping Deployable Toroids for Modular Gridshells”, ACM Trans. Graph., Vol.44, No.6, pp.235:1-21, <i>ACM SIGGRAPH Asia 2025</i>, Hong Kong, China, 2025.12<br>
+    <b><u>DOI:</u></b> <a href="https://doi.org/10.1145/3763808">https://doi.org/10.1145/3763808</a></div></li>
+  <li data-n="8"><div>Yuki Miyajima, <span class="me">Munkyun Lee</span>, and Tomohiro Tachi, “Designing Multistable Mechanisms using Quadrilateral Boundary Rigid Origami”, <i>ASME International Design Engineering Technical Conferences &amp; Computers and Information in Engineering Conference (IDETC/CIE)</i>, St. Louis, United States, 2022.11<br>
+    <b><u>DOI</u></b>: <a href="https://doi.org/10.1115/DETC2022-89035">https://doi.org/10.1115/DETC2022-89035</a></div></li>
+</ol>
+
+<!-- ================= PRESENTATIONS ================= -->
+<h2>Presentations</h2>
+<ol class="ref">
+  <li data-n="1"><div>[Oral] <span class="me">Munkyun Lee</span>, Joseph M. Gattas, and Tomohiro Tachi, “Multistable Curved-crease Origami Blocks for Reconfigurable Modular Building System”, <i>International Association for Shell and Spatial Structures (IASS) Annual Symposia, Mexico City, Mexico</i>, 2025.10</div></li>
+  <li data-n="2"><div>[Oral] <span class="me">Munkyun Lee</span>, Kiumars Sharifmoghaddam, and Tomohiro Tachi, “Multistable Polyhedral Modules for Curved Surface Assembly”, <i>Proceedings of International Association for Shell and Spatial Structures (IASS) Annual Symposia</i>, 2024.08</div></li>
+  <li data-n="3"><div>[Oral] <span class="me">Munkyun Lee</span>, Mahmoud Abu-Saleem, Tomohiro Tachi, and Joeseph M. Gattas, “A Lightweight Building Construction System using Curved-Crease Origami Blocks”, <i>Proceedings of the 8<sup>th</sup> International Meeting on Origami in Science, Mathematics, and Education (8OSME)</i>, 2024.07</div></li>
+  <li data-n="4"><div>[Oral] <span class="me">Munkyun Lee</span>, and Tomohiro Tachi, "Design and Evaluation of Compliant Hinges for Deployable Thick Origami Structures", Symposium of the International Association for Shell and Spatial Structures (IASS) 2023, Melbourne, Australia, 2023.07</div></li>
+  <li data-n="5"><div>[Oral] Yuki Miyajima, <span class="me">Munkyun Lee</span>, and Tomohiro Tachi, "Designing Multistable Mechanisms using Quadrilateral Boundary Rigid Origami", ASME International Design Engineering Technical Conferences &amp; Computers and Information in Engineering Conference (IDETC/CIE), St. Louis, United States, 2022.08</div></li>
+  <li data-n="6"><div>[Oral] <span class="me">Munkyun Lee</span>, Tomohiro Tachi, "Compliant Folding Hinge Structure using Radial Slit Pattern", World Congress on Computational Mechanics - Asian Pacific Congress on Computational Mechanics (WCCM-APCOM), Yokohama, Japan, 2022.08</div></li>
+  <li data-n="7"><div>[Oral] <span class="me">LEE MUNKYUN</span>，Kiumars Sharifmoghaddam，舘知宏：多安定な多面体折紙モジュールを用いた曲面組立，日本応用数理学会 第 20 回研究部会連合発表会, 2024.03</div></li>
+  <li data-n="8"><div>[Oral] <span class="me">LEE MUNKYUN</span>，舘知宏：厚みのある折紙構造のためのコンプライアントな折りヒンジの設計と評価，日本応用数理学会 第 19 回研究部会連合発表会, 2023.03</div></li>
+  <li data-n="9"><div>[Oral] <span class="me">LEE MUNKYUN</span>，舘知宏：放射状のスリットパータンを用いたコンプライアントな折りヒンジ構造，日本応用数理学会 第 18 回研究部会連合発表会, 2022.03</div></li>
+  <li data-n="10" class="pb"><div>[Oral] <span class="me">LEE MUNKYUN</span>，Mahmoud Abu-Saleem，舘知宏，Joeseph M. Gattas：曲線折紙ブロックを用いた軽量のモジュラー建設システム，日本折紙学会 第 36 回 折り紙の科学・数学・教育研究集会, 2024.05</div></li>
+  <li data-n="11"><div>[Oral] <span class="me">LEE MUNKYUN</span>，舘知宏：四辺形境界剛体折紙を用いた多安定機構の設計と分析，日本折紙学会 第 34 回 折り紙の科学・数学・教育研究集会, 2023.06</div></li>
+  <li data-n="12"><div>[Oral] <span class="me">LEE MUNKYUN</span>，舘知宏：放射状の巴形パータンを用いたコンプライアントな折りヒンジ構造，日本折紙学会 第 32 回 折り紙の科学・数学・教育研究集会, 2022.06</div></li>
+  <li data-n="13"><div>[Oral] <span class="me">LEE MUNKYUN</span>，舘知宏：放射状のスリットパータンを用いたコンプライアントな折りヒンジ構造，日本折紙学会 第 31 回 折り紙の科学・数学・教育研究集会, 2021.12</div></li>
+</ol>
+
+<!-- ================= AWARDS ================= -->
+<h2>Awards</h2>
+<ul class="dash">
+  <li><b>Engineering Graduate School Dean’s Award (Research)</b> – The University of Tokyo (2026.03)<br>
+  [Link: <a href="https://www.t.u-tokyo.ac.jp/topics/tp2026-04-06-001">https://www.t.u-tokyo.ac.jp/topics/tp2026-04-06-001</a>]</li>
+  <li><b>IASS Tsuboi Award 2023</b> (2024.08)<br>
+    The most outstanding paper presented and published in the Proceedings of the IASS Symposium 2023 (Publications [2])<br>
+    [Link: <a href="https://iass-structures.org/Tsuboi-Award-Recipients">https://iass-structures.org/Tsuboi-Award-Recipients</a>]</li>
+</ul>
+
+<!-- ================= GRANTS ================= -->
+<h2>Grants</h2>
+<ul class="dash">
+  <li><b>DC 2 Research Fellowship for Young Scientists</b><br>
+    Japan Society for the Promotion of Science (JSPS) (Apr. 2024 ~ Present)<br>
+    Total Grant: ¥1,500,000<br>
+    [Link: <a href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24KJ0648/">https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24KJ0648/</a>]</li>
+  <li><b>Designing Future Society Fellowship of The University of Tokyo (Wings-DFS Fellowship)</b><br>
+    (Apr. 2023 ~ Present)<br>
+    Total Grant: ¥340,000/Y (Replaced by JSPS)</li>
+</ul>
+
+<!-- ================= SCHOLARSHIPS ================= -->
+<h2>Scholarships</h2>
+<ul class="dash">
+  <li><b>Samsung Electronics DS Global Talent Scholarship Program</b><br>
+    Industry - Academic scholarship program: Division of Global Manufacturing &amp; Infra Technology</li>
+  <li><b>15th Korea-Japan Joint Government Scholarship Program for The Students in Science and Engineering</b>, NIIED (Gov. of South Korea) &amp; MEXT (Gov. of Japan),<br>
+    (Mar. 2014 ~ Mar. 2021) Full Funding Government Scholarship Program</li>
+</ul>
+
+<!-- ================= EXHIBITIONS ================= -->
+<h2>Exhibitions</h2>
+<ul class="dash">
+  <li><b>Exhibition: Connecting Artifacts 05</b> (2025.10) - Curved-Crease Origami Chair Blocks<br>
+    [Link: <a href="https://sites.google.com/view/connecting-artifacts/05?authuser=0">https://sites.google.com/view/connecting-artifacts/05?authuser=0</a>]</li>
+  <li><b>Exhibition: Connecting Artifacts 04</b> (2024.10) - Curved-Crease Origami Column Blocks<br>
+    [Link: <a href="https://sites.google.com/view/connecting-artifacts/04?authuser=0">https://sites.google.com/view/connecting-artifacts/04?authuser=0</a>]</li>
+</ul>
+
+<!-- ================= SEMINARS ================= -->
+<h2 class="pb">Seminars &amp; Workshops</h2>
+<ul class="dash">
+  <li><b>Seoul National University Seminar Talk</b> (2025.05)<br>
+    Seminar Talk: <i>“Multistable Origami Blocks for Adaptive Modular Building Systems”</i><br>
+    Department of Mechanical Engineering in SNU<br>
+    <i><u>Hosted by <b>Prof. Jinkyu Yang</b></u></i><br>
+    [Link: <a href="https://me.snu.ac.kr/%ec%84%b8%eb%af%b8%eb%82%98-%eb%b0%8f-%ed%96%89%ec%82%ac/document/20572/" style="word-break:break-all">https://me.snu.ac.kr/%ec%84%b8%eb%af%b8%eb%82%98-%eb%b0%8f-%ed%96%89%ec%82%ac/document/20572/</a>]</li>
+  <li><b>Origami Engineering Workshop in Princeton University</b> (2024.12)<br>
+    Learn how you can use simple folding rules to design and fabricate reconfigurable structures.<br>
+    <i><u>Hosted by <b>Prof. Glaucio H. Paulino</b></u></i><br>
+    [Link: <a href="https://cglink.me/2gi/r1952838">https://cglink.me/2gi/r1952838</a>]</li>
+  <li><b>Structural Origami Gathering</b> (2022.03, 2025.02, 2026.02)<br>
+    We collaboratively share, solve, and create scientific, engineering, design, math, and computational problems in origami, which leads to further collaborations for research or design projects.<br>
+    2022 – Online, 2025 – Keio University (Tokyo, Japan), 2026 – EPFL (Lausanne, Switzerland)<br>
+    [Link: <a href="https://structuralorigami.com">https://structuralorigami.com</a>]</li>
+  <li>[Showcasing] <b>NHK Special “新ジャポニズム第４集 DESIGN 世界を魅惑する“和”の魔法”</b><br>
+    [Link: <a href="https://www.nhk.jp/p/special/ts/2NY2QQLPM3/episode/te/KWX433Q5Y6/">https://www.nhk.jp/p/special/ts/2NY2QQLPM3/episode/te/KWX433Q5Y6/</a>]</li>
+  <li><b>GMSI US Workshop</b> (2023.03)<br>
+    Research exchange meeting with the Michigan university.<br>
+    Visiting Toyota North America Headquarter R&amp;D Lab., and Sony Pictures LA.<br>
+    [Link: <a href="https://gmsi.t.u-tokyo.ac.jp/src/2023_International_Workshop_in_US.pdf">https://gmsi.t.u-tokyo.ac.jp/src/2023_International_Workshop_in_US.pdf</a>]</li>
+</ul>
+
+<!-- ================= LANGUAGE ================= -->
+<h2>Language</h2>
+<ul class="dash">
+  <li>Korean: Native</li>
+  <li>Japanese: Fluent Speaking, N1 (2019)</li>
+  <li>English: Business Speaking, TOEIC L&amp;R 895 (2019)</li>
+</ul>
+
+<!-- ================= SKILLS ================= -->
+<h2>Skills &amp; Techniques</h2>
+<div class="cols">
+  <div>
+    <h3>Software Techniques</h3>
+    <ul class="dash tight">
+      <li>Rhinoceros &amp; Grasshopper (Advanced Level)</li>
+      <li>Abaqus (Advanced Level)</li>
+      <li>Ansys</li>
+      <li>Autodesk Inventor Nastran</li>
+      <li>MATLAB</li>
+      <li>Python</li>
+      <li>But now, GPT, Claude, Gemini can do whole things...</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Fabrication Techniques</h3>
+    <ul class="dash tight">
+      <li>Laser Cutting</li>
+      <li>3D Printing</li>
+      <li>Cutting Plotter</li>
+      <li>2-Axis CNC Cutting</li>
+      <li>3D Scanning</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+</body>
+</html>
